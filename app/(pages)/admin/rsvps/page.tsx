@@ -2,6 +2,7 @@ import { getRSVPs } from "@/app/actions/getRSVPs";
 import Link from "next/link";
 import { Button } from "@/components/ui/button"
 import { House } from "lucide-react";
+import RSVPTable from "@/app/_components/RSVPTable";
 
 export default async function RSVPsPage() {
     const { success, data, message } = await getRSVPs();
@@ -21,8 +22,10 @@ export default async function RSVPsPage() {
                         Sign Out
                     </Button>
                 </div>
-
             </div>
+
+            {/* {table} */}
+            <RSVPTable data={data || []} />
         </div>
     )
 }
